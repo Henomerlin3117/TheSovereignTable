@@ -1,12 +1,15 @@
 /*==========================
 PRELOADER
 ==========================*/
-
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
     const preloader = document.getElementById("preloader");
 
-    preloader.classList.add("hide");
+    setTimeout(() => {
+
+        preloader.classList.add("hide");
+
+    },1200);
 
 });
 
@@ -68,24 +71,3 @@ window.addEventListener("scroll", () => {
     });
 
 });
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", reveal);
-
-function reveal(){
-
-    reveals.forEach(item=>{
-
-        const windowHeight = window.innerHeight;
-
-        const top = item.getBoundingClientRect().top;
-
-        if(top < windowHeight - 120){
-
-            item.classList.add("active");
-
-        }
-
-    });
-
-}
